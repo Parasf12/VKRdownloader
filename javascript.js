@@ -14,7 +14,7 @@ document.getElementById("downloadBtn").addEventListener("click", function () {
 
     // AJAX request to retrieve video information
     $.ajax({
-        url: "https://vkrdownloader.vercel.app/server?vkr=" + inputUrl,
+        url: "https://down.abhaypp.com/server?vkr=" + inputUrl,
         type: "GET",
         async: true,
         crossDomain: true,
@@ -46,7 +46,7 @@ function handleSuccessResponse(data, inputUrl) {
         updateElement("thumb", videoData.thumbnail ? `<img src='${videoData.thumbnail}' width='300px'>` : "<img src='logo.png' width='300px'>");
         // Update HTML elements with video information
         updateElement("title", videoData.title ? `<h1>${videoData.title.replace(/\+/g, ' ')}</h1>` : "");
-        document.title = videoData.title ? `Download ${videoData.title.replace(/\+/g, ' ')} VKrDownloader` : "Download VKrDownloader";
+        document.title = videoData.title ? `Download ${videoData.title.replace(/\+/g, ' ')} NexDownloader` : "Download nexDownloader";
         updateElement("description", videoData.description ? `<h3><details> <summary>View Description</summary>${videoData.description}</details></h3>` : "");
         updateElement("uploader", videoData.url ? `<h5>${videoData.url}</h5>` : "");
         updateElement("duration", videoData.size ? `<h5>${videoData.size}</h5>` : "");
@@ -54,7 +54,7 @@ function handleSuccessResponse(data, inputUrl) {
         // Generate and display download buttons
         generateDownloadButtons(data);
     } else {
-        alert("Issue: Unable to get download link. Please check the URL and contact us on Social Media @TheOfficialVKr");
+        alert("Issue: Unable to get download link. Please check the URL and contact us on Social Media @abhay_pp88");
         document.getElementById("loading").style.display = "none";
     }
 }
@@ -86,9 +86,9 @@ console.log("3");
     }
     // If no download links found
     if (downloadV.innerHTML === "") {
-        alert("Server Down due to Too Many Requests. Please contact us on Social Media @TheOfficialVKr");
+        alert("Server Down due to Too Many Requests. Please contact us on Social Media @paras115");
         document.getElementById("container").style.display = "none";
-        location.href = "https://vkrdownloader.vercel.app/download.php?vkr=" + inputUrl;
+        location.href = "https://down.abhaypp.com/download.php?vkr=" + inputUrl;
     }
 }
 
